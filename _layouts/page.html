@@ -1,18 +1,16 @@
 ---
 layout: default
 ---
-
-<div class="page-single">
-    <div class="entry-header">       
-        <h1 class="posttitle">{{ page.title }}</h1>        
+<main class="content" role="main">
+  <article class="post">
+    <div class="post-meta">
+      <h1 class="post-title">{{ page.title }}</h1>
     </div>
-</div>
+    <section class="post-content">
+      <a name="topofpage"></a>
+      {{content}}
+    </section>
+  </article>
+</main>
 
-<!-- Featured Image -->
-{% include featured-image.html %}
-
-<!-- Content -->
-{% include article.html %}
-
-<!-- Comments if not disabled with comments: false -->
-{% include comments.html %}
+{% include footer.html %}
