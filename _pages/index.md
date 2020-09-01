@@ -2,7 +2,7 @@
 layout: defaults/page
 permalink: index.html
 narrow: true
-title: 十月初一
+title: Home
 ---
 
 ## Awu's Blog
@@ -10,7 +10,7 @@ title: 十月初一
 {% include components/intro.md %}
 <hr />
 
-### Recent Posts
+### 最近更新|Recent Posts
 
 {% for post in site.posts limit:3 %}
 {% include components/post-card.html %}
