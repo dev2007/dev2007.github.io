@@ -2,10 +2,10 @@
 layout: defaults/page
 permalink: index.html
 narrow: true
-title: Welcome to Friday Theme
+title: 十月初一
 ---
 
-## What is it?
+## Awu's Blog
 
 {% include components/intro.md %}
 
