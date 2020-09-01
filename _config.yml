@@ -8,7 +8,7 @@ excerpt_separator: <!--more-->
 
 # Config for your profile.
 title:            Awu's Blog            # Site title
-name:             Awu's Blog | 十月初一            # Your name
+name:             Awu | 十月初一            # Your name
 avatar:           /theme/img/avatar.png   # Path to an avatar image
 
 # The theme uses the baseurl throughout, which is useful for running the entire
