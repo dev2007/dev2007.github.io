@@ -10,7 +10,7 @@ site-twitter: #if your site has a twitter account, enter it here
 # Author Settings
 author: Moon Wu # add your name
 author-img: panda.png # add your photo
-about-author: 软件工程师，技杂。 # add description
+about-author: 软件工程师，技杂，谦虚谨慎，愿像海绵一样吸收知识。现涉猎云计算，工作常用java，也曾习C#、python、golang等。 # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
 social-github: dev2007 # add your Github handle
