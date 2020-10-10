@@ -1,73 +1,37 @@
-# Outputting
-permalink: /:categories/:year/:month/:day/:title.html
+title: Hello, world! I'm David Freeman
+description: > # this means to ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+permalink: ':title/'
+baseurl: "/flexible-jekyll" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+site-twitter: #if your site has a twitter account, enter it here
 
-# Conversion
-markdown:         kramdown
-highlighter:      rouge
-excerpt_separator: <!--more-->
+# Author Settings
+author: David Freeman # add your name
+author-img: david-freeman.jpg # add your photo
+about-author: I am a web developer focusing on front-end development. Always hungry to keep learning. # add description
+social-twitter: # add your Twitter handle
+social-facebook: # add your Facebook handle
+social-github: artemsheludko # add your Github handle
+social-linkedin: # add your Linkedin handle
+social-email: # add your Email address
 
-# Config for your profile.
-title:            Awu's Blog            # Site title
-name:             十月初一            # Your name
-avatar:           /theme/img/avatar.png   # Path to an avatar image
+# Disqus
+discus-identifier: mr-brown # add your discus identifier
 
-# The theme uses the baseurl throughout, which is useful for running the entire
-# site under a subdir, like for this GitHub Pages deployment as a project site.
-baseurl: ""
+# Tracker
+analytics: # Google Analytics
 
-# Add a directory to hold misc pages, just to keep the root directory clean.
-include: ["_pages", "_portfolio"]
+# Build Settings
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
 
-# Wire in the SASS files in the theme directory.
-sass:
-  sass_dir: theme/_sass
-  style: compressed
+paginate: 8
+paginate_path: "/page/:num"
 
-# Turn the projects into a collection.
-collections:
-  projects:
-    output: true
-    title: Projects
-    permalink: /:collection/:name.html
-  portfolio:
-    output: true
-    title: portfolio
-    permalink: /:collection/:name.html
-
-defaults:
-# Turn the profile sidebar on for all pages by default, except for the
-# collections, where it is off and replaced by useful things on the sidebar.
-# To override this one a page, use
-#    show_profile: false
-# to hide the profile.
-  -
-    scope:
-      path: ""
-    values:
-      show_profile: true
-  -
-    scope:
-      path: "_posts"
-    values:
-      show_profile: false
-      layout: defaults/post
-  -
-    scope:
-      path: "_portfolio"
-    values:
-      show_profile: false
-      layout: defaults/portfolio
-  -
-    scope:
-      path: "_projects"
-    values:
-      show_profile: false
-      layout: defaults/project
-  -
-    scope:
-      path: "list"
-    values:
-      show_profile: false
-      layout: defaults/list
-
-
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
