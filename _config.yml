@@ -4,7 +4,7 @@ description: > # this means to ignore newlines until "baseurl:"
   学而不思则罔，思而不学则殆| Learning without thought is labour lost; thought without learning is perilous
 permalink: ':title/'
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "http://blog.shiyueshuyi.xyz" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
 # Author Settings
