@@ -40,4 +40,4 @@ GitHub官网介绍 [GitHub Pages](https://pages.github.com/)
 
 *请看下一篇：[用GitHub Pages搭建博客（二）](/create-github-pages-second)*
 
-*图片来源 ：[unsplash @doto](https://unsplash.com/@doto)*
+*题图来源 ：[unsplash @doto](https://unsplash.com/@doto)*
