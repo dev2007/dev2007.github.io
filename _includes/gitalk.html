@@ -13,7 +13,9 @@
         link.rel = "stylesheet";
         link.href = "https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css";
         (d.head || d.body).appendChild(link);
-
+        setTimeout(initGitalk,1000);
+      })();
+      function initGitalk(){
         const gitalk = new Gitalk({
           clientID: '2a33e1cb0be96f2d43a3',
           clientSecret: '0da0b8b354365388cceffecd8c62e35393b635aft',
@@ -24,7 +26,7 @@
         })
 
         gitalk.render('gitalk-container')
-      })();
+      };
 
     </script>
     {% endif %}
