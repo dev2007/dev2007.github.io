@@ -1,0 +1,29 @@
+<section class="comment-area">
+  <div class="comment-wrapper">
+    {% if site.gitalk-identifier %}
+    <div id="gitalk-container" class="article-comments"></div>
+    <script>
+      (function () {
+        var d = document, 
+        s = d.createElement('script');
+        s.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js';
+        (d.head || d.body).appendChild(s);
+
+        var 
+
+        const gitalk = new Gitalk({
+          clientID: '2a33e1cb0be96f2d43a3',
+          clientSecret: '0da0b8b354365388cceffecd8c62e35393b635aft',
+          repo: 'gitalk-comment',      // The repository of store comments,
+          owner: 'dev2007',
+          admin: ['dev2007'],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+      })();
+
+    </script>
+    {% endif %}
+  </div>
+</section> <!-- End Comment Area -->

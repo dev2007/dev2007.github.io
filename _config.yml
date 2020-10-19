@@ -17,8 +17,8 @@ social-github: dev2007 # add your Github handle
 social-linkedin: # add your Linkedin handle
 social-email: softengineerwu@gmail.com # add your Email address
 
-# Disqus
-discus-identifier: # add your discus identifier
+# gitalk
+gitalk-identifier: rue# add your gitalk identifier
 
 # Tracker
 analytics: # Google Analytics
