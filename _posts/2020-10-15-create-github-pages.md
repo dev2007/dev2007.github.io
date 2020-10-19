@@ -38,6 +38,6 @@ GitHub官网介绍 [GitHub Pages](https://pages.github.com/)
 * Pages网站本质是git仓库，所以更新网站就是使用git更新仓库
 * GitHub Pages可以绑定自己的域名
 
-*请看下一篇：[用GitHub Pages搭建博客（二）](/create-github-pages-2)*
+*请看下一篇：[用GitHub Pages搭建博客（二）](/create-github-pages-second)*
 
 *图片来源 ：[unsplash @doto](https://unsplash.com/@doto)*
