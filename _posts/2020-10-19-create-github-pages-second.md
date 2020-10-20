@@ -63,6 +63,6 @@ tags: [blog,github pages]
 
 至此，GitHub Pages初始设置完成，我们得到一个可见的静态网站。进一步，如果自己设置网站风格，如何写文章，将在后续介绍。
 
-*请看下一篇：用GitHub Pages搭建博客（三）*
+*请看下一篇：[用GitHub Pages搭建博客（三）](/create-github-pages-third)*
 
 *题图来源 ：[unsplash @doto](https://unsplash.com/@doto)*
