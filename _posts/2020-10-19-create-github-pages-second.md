@@ -56,7 +56,7 @@ tags: [blog,github pages]
 
 ![仓库文件已保存](/assets/img/githubpages/pages6.jpg)
 
-- 稍等片刻，在浏览器输入仓库名称，也就是自定义域名，即可访问
+- 稍等片刻，在浏览器输入仓库名称，也就是GitHub分配的域名，即可访问
 > 账号名称.github.io
 
 ![访问pages](/assets/img/githubpages/pages7.jpg)

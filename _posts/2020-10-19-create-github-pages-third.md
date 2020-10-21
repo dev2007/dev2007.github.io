@@ -8,6 +8,8 @@ fig-caption: # Add figcaption (optional)
 tags: [blog,github pages]
 ---
 
+> 本篇介绍通过git工具替换网站主题，并发布
+
 # Jekyll和Hexo的简要介绍
 
 &emsp;&emsp;GitHub Pages是基于Jekyll构建的，Jekyll 是一个简单的博客形态的静态站点生产工具，它有一个模版目录，其中包含原始文本格式的文档，通过一个转换器（如 Markdown）和Liquid 渲染器，将我们的的原始文章（Markdown格式文件）转化成静态页面，将整个仓库的文件生成一个完整的可发布的静态网站，而不用手工去对每篇文章都写一个html页面。
