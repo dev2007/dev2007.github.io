@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用GitHub Pages搭建博客（五）
-date: 2020-10-20 09:00:00 +0800
+date: 2020-10-22 09:00:00 +0800
 description: GitHub Pages初步介绍五 # Add post description (optional)
 img: linus-nylund-unsplash-small.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
@@ -59,6 +59,15 @@ GitHub Pages域名为：
 
 ![域名配置7](/assets/img/githubpages/domain7.jpg)
 
+**注意！注意！注意！**
+
+在[用GitHub Pages搭建博客（四）](/create-github-pages-fourth)中提到_config.yml文件中常有一个属性为自定义域名。
+
+- url
+
+> url 一般是网站部署后的域名，用于访问网页时正确定位资源路径，如果涉及到自定义域名，需要在此配置，才能正确访问。
+
+如果我们按此篇介绍配置域名后，发现网站访问页面异常，出现图片链接不正确、无法加载的情况，就要检查_config.yml文件，将自定义域名加入配置中，并通过Git工具提交更新即可。
 
 *请看下一篇：[用GitHub Pages搭建博客（六）](/create-github-pages-sixth)*
 
