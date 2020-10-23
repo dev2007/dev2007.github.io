@@ -47,7 +47,7 @@ GitHub Pages一般使用的Jekyll，配置项基本都设置在_config.yml文件
 
 一般来说，GitHub Pages使用Jekyll主题，文章一般是放在目录_posts下，我们只要使用Markdown语法书写好文章放入此目录即可。
 
-文章由于要被Jekyll转换为静态网页，所以需要按主题作者的配置，在文件中添加相关的属性说明，比如文章的名称等，详情的介绍，在[用GitHub Pages搭建博客（三）](/create-github-pages-third)中，挑选Jekyll主题时，每个主题的详情网站中都有介绍。
+文章由于要被Jekyll转换为静态网页，所以需要按主题作者的配置，在文件中添加相关的属性说明，比如文章的名称等，详情的介绍。在[用GitHub Pages搭建博客（三）](/create-github-pages-third)中，挑选Jekyll主题时，每个主题的详情网站中都有介绍。
 
 我们可以直接看我们下载的主题_posts目录中的示例文章的格式，按此格式创建我们的文章即可。此处还是以上一篇使用的Jekyll主题为例进行介绍。
 
