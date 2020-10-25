@@ -22,7 +22,7 @@
           repo: 'gitalk-comment',      // The repository of store comments,
           owner: 'dev2007',
           admin: ['dev2007'],
-          id: location.href,
+          id: decodeURI(location.href),
           distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
