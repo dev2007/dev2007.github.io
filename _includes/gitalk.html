@@ -2,6 +2,7 @@
   <div class="comment-wrapper">
     {% if site.gitalk-identifier %}
     <div id="gitalk-container" class="article-comments"></div>
+    <script url="https://cdn.jsdelivr.net/npm/md5@2.3.0/md5.min.js"></script>
     <script>
       (function () {
         var d = document, 
@@ -22,7 +23,7 @@
           repo: 'gitalk-comment',      // The repository of store comments,
           owner: 'dev2007',
           admin: ['dev2007'],
-          id: decodeURI(location.href),
+          id: MD5(location.pathname),
           distractionFreeMode: false  // Facebook-like distraction free mode
         })
 
