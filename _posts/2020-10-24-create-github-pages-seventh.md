@@ -57,7 +57,7 @@ tags: [blog,github pages]
 
 ***上一篇：[用GitHub Pages搭建博客（六）](/create-github-pages-sixth)***
 
-***请看下一篇：[用GitHub Pages搭建博客（八）](/create-github-pages-eighth)***
+***下一篇：[用GitHub Pages搭建博客（八）](/create-github-pages-eighth)***
 
 
 *题图来源 ：[unsplash @doto](https://unsplash.com/@doto)*

@@ -70,7 +70,7 @@ GitHub Pages域名为：
 如果我们按此篇介绍配置域名后，发现网站访问页面异常，出现图片链接不正确、无法加载的情况，就要检查_config.yml文件，将自定义域名加入配置中，并通过Git工具提交更新即可。
 
 
-***上一篇：[用GitHub Pages搭建博客（五）](/create-github-pages-fifth)***
+***上一篇：[用GitHub Pages搭建博客（四）](/create-github-pages-fourth)***
 
 ***下一篇：[用GitHub Pages搭建博客（六）](/create-github-pages-sixth)***
 

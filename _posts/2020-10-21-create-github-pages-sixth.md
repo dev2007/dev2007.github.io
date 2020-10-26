@@ -85,6 +85,6 @@ Vercel支持GitHub账号直接登录，直接使用GitHub账号登录即可。
 
 ***上一篇：[用GitHub Pages搭建博客（五）](/create-github-pages-fifth)***
 
-***请看下一篇：[用GitHub Pages搭建博客（七）](/create-github-pages-seventh)***
+***下一篇：[用GitHub Pages搭建博客（七）](/create-github-pages-seventh)***
 
 *题图来源 ：[unsplash @doto](https://unsplash.com/@doto)*
