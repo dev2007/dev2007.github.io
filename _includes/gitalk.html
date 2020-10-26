@@ -2,13 +2,16 @@
   <div class="comment-wrapper">
     {% if site.gitalk-identifier %}
     <div id="gitalk-container" class="article-comments"></div>
-    <script url="https://cdn.jsdelivr.net/npm/md5@2.3.0/md5.min.js"></script>
     <script>
       (function () {
         var d = document, 
         s = d.createElement('script');
         s.src = 'https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js';
         (d.head || d.body).appendChild(s);
+
+        md5Script = d.createElement('script');
+        md5Script.src = 'https://cdn.jsdelivr.net/npm/md5@2.3.0/dist/md5.min.js';
+        (d.head || d.body).appendChild(md5Script);
 
         link = d.createElement("link");
         link.rel = "stylesheet";
