@@ -99,6 +99,8 @@ tags: [blog,github pages]
 ![pages新主题页面](/assets/img/githubpages/git9.jpg)
 
 
-*请看下一篇：[用GitHub Pages搭建博客（四）](/create-github-pages-fourth)*
+***上一篇：[用GitHub Pages搭建博客（二）](/create-github-pages-second)***
+
+***下一篇：[用GitHub Pages搭建博客（四）](/create-github-pages-fourth)***
 
 *题图来源 ：[unsplash @doto](https://unsplash.com/@doto)*

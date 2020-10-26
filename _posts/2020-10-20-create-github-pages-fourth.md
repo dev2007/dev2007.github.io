@@ -84,6 +84,8 @@ GitHub Pages一般使用的Jekyll，配置项基本都设置在_config.yml文件
 > 网站地址：用户名.github.io
 
 
-*请看下一篇：[用GitHub Pages搭建博客（五）](/create-github-pages-fifth)*
+***上一篇：[用GitHub Pages搭建博客（三）](/create-github-pages-third)***
+
+***下一篇：[用GitHub Pages搭建博客（五）](/create-github-pages-fifth)***
 
 *题图来源 ：[unsplash @doto](https://unsplash.com/@doto)*
