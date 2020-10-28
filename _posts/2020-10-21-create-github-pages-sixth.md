@@ -24,7 +24,13 @@ Vercel支持GitHub账号直接登录，直接使用GitHub账号登录即可。
 
 ![vercel1](/assets/img/githubpages/vercel1.jpg)
 
-> 此处需要注意，如果使用GitHub账号登录vercel，GitHub账号的主邮箱不能是QQ邮箱，否则是无法正确登录使用的。
+> 此处需要注意，如果使用GitHub账号登录vercel，GitHub账号的主邮箱不能是QQ邮箱，最好用gmail，否则是无法正确登录使用的。
+
+> 如果没有注意，登录失败，提示如下所示的文字，可按提示信息给技术支持邮箱发邮件，要求解禁即可。从对方时区看，只要上班了，很快就会帮你解禁。
+
+*$\color{red}{Error:This user account is blocked. Contact}$ support@vercel.com $\color{red}{for more information.}$*
+
+![vercel blocked](/assets/img/githubpages/block.jpg)
 
 # 导入项目及部署
 
