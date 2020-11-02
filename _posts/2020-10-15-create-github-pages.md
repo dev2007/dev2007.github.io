@@ -13,13 +13,13 @@ tags: [blog,github pages]
 GitHub官网介绍 [GitHub Pages](https://pages.github.com/)
 
 官网是这样介绍的：
->Websites for you and your projects.
+> Websites for you and your projects.
 
->给你和你的项目的网站。
+> 给你和你的项目的网站。
 
->Hosted directly from your GitHub repository. Just edit, push, and your changes are live.
+> Hosted directly from your GitHub repository. Just edit, push, and your changes are live.
 
->从你的GitHub仓库中直接托管。只用编辑、发布，你的修改直接生效。
+> 从你的GitHub仓库中直接托管。只用编辑、发布，你的修改直接生效。
 
 从官网的介绍讲，GitHub Pages是GitHub提供的一个网站托管服务，它将你指定的git仓库托管为网站进行展示。而托管的这个仓库中的静态网页内容，一般用于介绍你的其他git项目。
 

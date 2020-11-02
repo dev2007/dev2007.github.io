@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 八卦一下&也谈《国内首个.NET 5框架》
-date: 2020-11-01 09:00:00 +0100
+date: 2020-11-01 09:00:00 +0800
 description: 八卦一下&也谈《国内首个.NET 5框架》 # Add post description (optional)
 img: sun.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
