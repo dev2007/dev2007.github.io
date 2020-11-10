@@ -5,7 +5,7 @@ date: 2020-11-05 09:00:00 +0800
 description: 双十一，聊一聊浪漫 # Add post description (optional)
 img: 1106.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [编程,阿呜的编程,人生]
+tags: [微信,阿呜的编程]
 ---
 
 2020年的“双十一”又要来到。很多直男朋友又要陷入被女朋友、被老婆抱怨不懂浪漫的时刻。直男们纷纷感到很委屈：啥是浪漫啊？

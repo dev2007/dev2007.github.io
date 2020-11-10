@@ -5,7 +5,7 @@ date: 2020-11-08 10:00:00 +0800
 description: 多项目部署为同一个GitHub Pages # Add post description (optional)
 img: pine-watt-dUbKcgu0zjw-unsplash.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [编程,github pages]
+tags: [blog,github pages]
 ---
 
 > 由于GitHub 的约定，一个账户只能拥有一个GitHub Pages，那么，如果你有多个想部署的静态网站（博客和文档等），它们是互相隔离的，如何用同一个GitHub账户进行部署呢？

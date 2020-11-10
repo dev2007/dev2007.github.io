@@ -5,7 +5,7 @@ date: 2020-10-01 09:00:00 +0100
 description: 《边城》与编程 # Add post description (optional)
 img: cd1-small.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [编程,阿呜的编程]
+tags: [微信,阿呜的编程]
 ---
 
 &emsp;&emsp;沈从文先生写了一篇小说《边城》，讲湘西的故事，以兼具抒情诗和小品文的优美笔触，描绘了湘西地区特有的风土人情；借船家少女翠翠的纯爱故事，展现出了人性的善良美好。

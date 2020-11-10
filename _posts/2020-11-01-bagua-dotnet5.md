@@ -5,7 +5,7 @@ date: 2020-11-01 09:00:00 +0800
 description: 八卦一下&也谈《国内首个.NET 5框架》 # Add post description (optional)
 img: sun.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
-tags: [编程,阿呜的编程]
+tags: [微信,阿呜的编程]
 ---
 
 前几日，博客园上出现了一篇文章《国内首个 .NET 5 框架 Fur 斩获 1000 stars，1.0.0-rc.final.20 发布》。此文一出，立即引发了吃瓜程序员的好奇，大家纷纷好奇：国产框架到了一个新的高度了吗？
