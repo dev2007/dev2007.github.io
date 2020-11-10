@@ -17,9 +17,12 @@
   {% endif %}
   {% if page.description %}
     <meta content="{{ page.description }}" property="og:description">
+    <meta content="{{ page.description }}" property="description">
   {% else %}
     <meta content="{{ site.description }}" property="og:description">
+    <meta content="{{ site.description }}" property="description">
   {% endif %}
+    <meta content="{{ site.keywords }}" property="keywords">
   {% if page.url %}
     <meta content="{{ site.url }}{{ page.url }}" property="og:url">
   {% endif %}

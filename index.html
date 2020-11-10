@@ -9,7 +9,11 @@ layout: main
   {% endif %}
   <div class="post-content">
     <h2 class="post-title"><a href="{{post.url | prepend: site.baseurl}}">{{post.title}}</a></h2>
-    <span class="post-date">{{post.date | date: '%Y-%m-%d %H:%M'}}</span>
+    {% if post.author %}
+      <span class="post-date">{{post.date | date: '%Y-%m-%d %H:%M:%S'}}&nbsp;&nbsp;&nbsp;&nbsp;{{post.author}}</span>
+    {% else %}
+      <span class="post-date">{{post.date | date: '%Y-%m-%d %H:%M:%S'}}&nbsp;&nbsp;&nbsp;&nbsp;{{site.author}}</span>
+    {% endif %}
     <p>{{ post.content | strip_html | truncate: 60 }}</p>
   </div>
 </article>

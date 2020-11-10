@@ -1,15 +1,16 @@
-title: Awu's blog | 阿呜的边城
+title: 阿呜的边城-Awu's blog
 description: > # this means to ignore newlines until "baseurl:"
-  java|C#|.net|python|golang|cloud|ai|
-  学而不思则罔，思而不学则殆| Learning without thought is labour lost; thought without learning is perilous
+  阿呜的边城是阿呜的个人博客。主要分享一切与开发编程以及开发者相关的文章。微信公众号：阿呜的编程。个人的编程理念：
+  学而不思则罔，思而不学则殆（Learning without thought is labour lost; thought without learning is perilous）。
+keywords: 开发者,程序员,程序猿,程序媛,极客,码农,编程,代码,软件开发,开源,IT网站,技术社区,Developer,Programmer,Coder,Geek,Coding,Code,阿呜的边程,阿呜的编程
 permalink: ':title/'
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://blog.shiyueshuyi.xyz" # the base hostname & protocol for your site, e.g. http://example.com
 site-twitter: #if your site has a twitter account, enter it here
 
 # Author Settings
-author: Moon Wu # add your name
-author-img: panda.png # add your photo
+author: 阿呜 # add your name
+author-img: wolf.png # add your photo
 about-author: 软件工程师，技杂，谦虚谨慎，愿像海绵一样吸收知识。现涉猎云计算，工作常用java，也曾习C++、C#、python、golang、php等。 # add description
 social-twitter: # add your Twitter handle
 social-facebook: # add your Facebook handle
