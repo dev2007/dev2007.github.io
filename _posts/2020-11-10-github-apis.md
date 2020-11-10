@@ -110,7 +110,7 @@ Postman示例如图：
 
 ![create repo](/assets/img/github/create_repo.jpg)
 
-## 为仓库上传文件API
+## 为仓库上传/更新文件API
 
 `请求API：`
 
@@ -127,19 +127,41 @@ PUT https://api.github.com/repos/{user}/imgs/contents/{path}/{filename}
 ```json
 {
   "message": "提交说明",
-  "committer": {
-    "name": "提交者用户名",
-    "email": "提交者邮箱"
-  },
-  "content": "base64编码的文件内容"
+  "content": "base64编码的文件内容",
+  "sha": "文件的blob sha"
 }
 ```
 
 > content：文件内容的base64编码后的字符串
 
+> sha：文件更新或删除时必填，先用GET接口查询文件信息，可在响应体中获取
+
 Postman示例如图：
 
 ![upload file](/assets/img/github/upload.jpg)
+
+## 从仓库删除文件API
+
+`请求API：`
+
+```bash
+DELETE https://api.github.com/repos/{user}/imgs/contents/{path}/{filename}
+```
+
+- user：仓库所属用户名
+- path：上传文件存放的路径，如果文件夹不存在，会自动创建
+- filename：上传的文件名称
+
+`请求体|Request body：`
+
+```json
+{
+  "message": "提交说明",
+  "sha": "文件的blob sha"
+}
+```
+
+> sha：文件更新或删除时必填，先用GET接口查询文件信息，可在响应体中获取
 
 ## token的生成
 
