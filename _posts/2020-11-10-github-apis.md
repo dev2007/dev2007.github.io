@@ -5,7 +5,7 @@ date: 2020-11-10 10:40:20 +0800
 description: 使用GitHub API 上传文件到仓库及用GitHub做图床
 img: brina-blum-Bb_X4JgSqIM-unsplash.jpg
 fig-caption: # Add figcaption (optional)
-tags: [编程,github]
+tags: [blog,github]
 ---
 
 > 本文介绍GitHub API基础及上传文件到仓库API，并应用API将GitHub作为图床
@@ -246,3 +246,5 @@ index.html示例：
 - 6 CDN加速
 
 可以使用Vercel进行加速，可参看[用GitHub Pages搭建博客（六）](/create-github-pages-sixth)
+
+*题图来源 ：[unsplash](https://unsplash.com)*

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 用GitHub Pages搭建博客（七）
-date: 2020-10-24 09:00:00 +0100
+date: 2020-10-24 09:00:00 +0800
 description: GitHub Pages初步介绍七 # Add post description (optional)
 img: linus-nylund-unsplash-small.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)

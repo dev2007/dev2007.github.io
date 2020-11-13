@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《边城》与编程
-date: 2020-10-01 09:00:00 +0100
+date: 2020-10-01 09:00:00 +0800
 description: 《边城》与编程 # Add post description (optional)
 img: cd1-small.jpg # Add image post (optional)
 fig-caption: # Add figcaption (optional)
