@@ -30,9 +30,9 @@ tags: [blog,github pages]
 
 在`_config.yml`文件中添加时区配置：
 
-```bash
-timezone: Asia/Shanghai
-```
+{% highlight shell %}
+  timezone: Asia/Shanghai
+{% endhighlight %}
 
 如图：
 
