@@ -26,7 +26,7 @@ tags: [blog,github pages]
 
 比如，我创建了一个GitHub Pages项目（名称`dev2007.github.io`），然后在配置中开启了GitHub Pages，那么这个项目就是对应的主域名访问，如下：
 
-示例链接：[https://dev2007.github.io/](https://dev2007.github.io/z)
+示例链接：[https://dev2007.github.io/](https://dev2007.github.io/)
 
 ![githubpagessub](/assets/img/githubpages/sub1.jpg)
 
