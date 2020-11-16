@@ -40,18 +40,11 @@ rougify style monokai.sublime > assets/css/syntax.css
 
 代码块高亮，我们使用`html`块进行包裹，示例如下：
 
-
-```shell
-{% highlight ruby %}
-```
-
-```shell
+{% raw %}
+{% highlight java %}
 ///代码部分
-```
-
-```shell
 {% endhighlight %}
-```
+{% endraw %}
 
 语言高亮示例：
 
