@@ -40,6 +40,33 @@ tags: [blog,github pages]
 
 > 通过以上方式，我们就将两个项目部署到了同一个GitHub Pages中。如果进一步想使用子域名，在项目的`Custom domain`中进行配置即可。
 
+**2021-05-18 补充**
+
+关于多项目下，如何设置自定义域名。
+
+由于github的所有项目只能有一个 github pages 域名（如我的项目：dev2007/dev2007.github.io，域名为https://dev2007.github.io），其他开启 github pages 的项目都是这个域名的子目录（如项目dev2007/imgs，域名为https://dev2007.github.io/imgs）。
+
+而我想将他们分别配置为我的子域名：
+
+|项目|github域名|自定义域名|
+|--|--|--|
+|dev2007/dev2007.github.io |https://dev2007.github.io| https://blog.shiyueshuyi.xyz|
+|dev2007/imgs |https://dev2007.github.io/imgs | https://images.shiyueshuyi.xyz|
+
+我们只需要在域名服务商的管理界面上，将子域名指向 github pages 域名。即配置CNAME：
+
+blog -> CNAME -> dev2007.github.io
+
+images -> CNAME -> dev2007.github.io
+
+然后在 github 的相应项目的 Pages 配置添加相应的域名：
+
+dev2007/dev2007.github.io -> 配置自定义域名 blog.shiyueshuyi.xyz
+
+dev2007/imgs -> 配置自定义域名 imags.shiyueshuyi.xyz
+
+稍等 DNS 生效后，就可以使用子域名访问相应的 github pages 主项目、子项目网站了。
+
 *图片来源 ：[unsplash](https://unsplash.com)*
 
 ![mp](/assets/img/mp.png)
