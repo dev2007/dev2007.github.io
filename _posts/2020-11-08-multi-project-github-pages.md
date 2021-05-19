@@ -68,5 +68,3 @@ dev2007/imgs -> 配置自定义域名 imags.shiyueshuyi.xyz
 稍等 DNS 生效后，就可以使用子域名访问相应的 github pages 主项目、子项目网站了。
 
 *图片来源 ：[unsplash](https://unsplash.com)*
-
-![mp](/assets/img/mp.png)
