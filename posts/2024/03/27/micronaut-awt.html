@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Micronaut Native Image 编译支持 AWT 图片绘制 | 阿呜的边城-Awu&#39;s World</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    <link rel="icon" href="/favicon/favicon.ico">
+    <meta name="description" content="分享一切与开发编程以及开发者相关的文章。微信公众号：程序员爱读书">
+    <meta name="keywords" content="开发者,程序员,程序猿,程序媛,极客,码农,编程,代码,软件开发,开源,IT网站,技术社区,Developer,Programmer,Coder,Geek,Coding,Code,阿呜的边程,阿呜的编程">
+    <link rel="preload" href="/assets/css/0.styles.4630dd33.css" as="style"><link rel="preload" href="/assets/js/app.467e2829.js" as="script"><link rel="preload" href="/assets/js/7.4e539d82.js" as="script"><link rel="preload" href="/assets/js/27.7a62c283.js" as="script"><link rel="prefetch" href="/assets/js/1.7e906b04.js"><link rel="prefetch" href="/assets/js/10.e0248698.js"><link rel="prefetch" href="/assets/js/12.e538132d.js"><link rel="prefetch" href="/assets/js/13.2a2f676b.js"><link rel="prefetch" href="/assets/js/14.214a405f.js"><link rel="prefetch" href="/assets/js/15.f38aa5fe.js"><link rel="prefetch" href="/assets/js/16.f1929af0.js"><link rel="prefetch" href="/assets/js/17.07d76279.js"><link rel="prefetch" href="/assets/js/18.d6db1d2b.js"><link rel="prefetch" href="/assets/js/19.84710e5e.js"><link rel="prefetch" href="/assets/js/2.7ac2fab1.js"><link rel="prefetch" href="/assets/js/20.f959fe80.js"><link rel="prefetch" href="/assets/js/21.2fd86fda.js"><link rel="prefetch" href="/assets/js/22.c77ef176.js"><link rel="prefetch" href="/assets/js/23.8a8ffe22.js"><link rel="prefetch" href="/assets/js/24.b6c2e323.js"><link rel="prefetch" href="/assets/js/25.6fd04512.js"><link rel="prefetch" href="/assets/js/26.2974a93c.js"><link rel="prefetch" href="/assets/js/28.f8974e73.js"><link rel="prefetch" href="/assets/js/29.cb3e8910.js"><link rel="prefetch" href="/assets/js/3.9254d7f5.js"><link rel="prefetch" href="/assets/js/30.bf6a36b7.js"><link rel="prefetch" href="/assets/js/31.5dec5686.js"><link rel="prefetch" href="/assets/js/32.8a42b4c0.js"><link rel="prefetch" href="/assets/js/33.83abd616.js"><link rel="prefetch" href="/assets/js/34.ee89ddca.js"><link rel="prefetch" href="/assets/js/35.23327e0c.js"><link rel="prefetch" href="/assets/js/36.d1398816.js"><link rel="prefetch" href="/assets/js/37.831600d9.js"><link rel="prefetch" href="/assets/js/38.71dccc31.js"><link rel="prefetch" href="/assets/js/39.9368b3e2.js"><link rel="prefetch" href="/assets/js/4.1a846bb9.js"><link rel="prefetch" href="/assets/js/40.96d1de0d.js"><link rel="prefetch" href="/assets/js/41.4bc03f21.js"><link rel="prefetch" href="/assets/js/42.c6c92807.js"><link rel="prefetch" href="/assets/js/43.89080e02.js"><link rel="prefetch" href="/assets/js/44.66cfb85b.js"><link rel="prefetch" href="/assets/js/45.a7e3d8ae.js"><link rel="prefetch" href="/assets/js/46.9d784267.js"><link rel="prefetch" href="/assets/js/47.88a828fd.js"><link rel="prefetch" href="/assets/js/48.a62bea2b.js"><link rel="prefetch" href="/assets/js/49.ea543004.js"><link rel="prefetch" href="/assets/js/5.96353e26.js"><link rel="prefetch" href="/assets/js/50.eba5af66.js"><link rel="prefetch" href="/assets/js/51.d274e43f.js"><link rel="prefetch" href="/assets/js/52.4443a52d.js"><link rel="prefetch" href="/assets/js/53.4112b49f.js"><link rel="prefetch" href="/assets/js/54.98363e68.js"><link rel="prefetch" href="/assets/js/55.87360021.js"><link rel="prefetch" href="/assets/js/56.e8482afd.js"><link rel="prefetch" href="/assets/js/57.d4ee3fcd.js"><link rel="prefetch" href="/assets/js/58.69071d3d.js"><link rel="prefetch" href="/assets/js/59.67f1a597.js"><link rel="prefetch" href="/assets/js/6.8c198353.js"><link rel="prefetch" href="/assets/js/60.c40c582e.js"><link rel="prefetch" href="/assets/js/61.f1757ef1.js"><link rel="prefetch" href="/assets/js/62.13c89e9c.js"><link rel="prefetch" href="/assets/js/63.6ad00547.js"><link rel="prefetch" href="/assets/js/64.a2915c89.js"><link rel="prefetch" href="/assets/js/65.f3caf203.js"><link rel="prefetch" href="/assets/js/66.5f72902f.js"><link rel="prefetch" href="/assets/js/67.c5106e01.js"><link rel="prefetch" href="/assets/js/68.c0662345.js"><link rel="prefetch" href="/assets/js/69.67072028.js"><link rel="prefetch" href="/assets/js/70.19b64377.js"><link rel="prefetch" href="/assets/js/71.f52a0e24.js"><link rel="prefetch" href="/assets/js/8.b31a6a19.js"><link rel="prefetch" href="/assets/js/9.e4ce902a.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.4630dd33.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div id="vuepress-theme-meteorlxy"><header class="header" style="background-size:cover;background-repeat:no-repeat;background-position:center;background-attachment:scroll;background-image:url(/assets/img/summer-stock-zVCgHOv3Tiw-unsplash.jpg);" data-v-7a046aea><div data-v-e4145d0a data-v-7a046aea><nav class="navbar" data-v-e4145d0a><div class="container" data-v-e4145d0a><a href="/" class="router-link-active" data-v-e4145d0a><span class="navbar-site-name" data-v-e4145d0a>
+          阿呜的边城-Awu's World
+        </span></a> <div class="navbar-toggler" data-v-e4145d0a><svg class="icon" style="font-size:1.2em;" data-v-e4145d0a data-v-e4145d0a><title data-v-e4145d0a data-v-e4145d0a>menu</title><use xlink:href="#icon-menu" data-v-e4145d0a data-v-e4145d0a></use></svg></div> <div class="navbar-links" data-v-e4145d0a><a href="/" class="navbar-link" data-v-e4145d0a>
+            程序员爱读书
+          </a><a href="/posts/" class="navbar-link router-link-active" data-v-e4145d0a>
+            文章列表
+          </a><a href="https://github.com/dev2007" target="_blank" rel="noopener noreferrer" class="navbar-link" data-v-e4145d0a><span data-v-e4145d0a>GitHub</span> <span data-v-e4145d0a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a><a href="https://micronaut.bookhub.tech" target="_blank" rel="noopener noreferrer" class="navbar-link" data-v-e4145d0a><span data-v-e4145d0a>Micronaut</span> <span data-v-e4145d0a><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div></div></nav> <div class="navbar-holder" style="display:none;" data-v-e4145d0a></div></div> <div class="banner" data-v-98d6aa8c data-v-7a046aea data-v-7a046aea><div class="container" data-v-98d6aa8c><div class="center" data-v-98d6aa8c><h1 data-v-98d6aa8c data-v-7a046aea>
+          Micronaut Native Image 编译支持 AWT 图片绘制
+        </h1></div></div></div></header> <div class="container clearfix show-aside" data-v-4dd605a1 data-v-4dd605a1><main class="main" data-v-4dd605a1><div class="post" data-v-4dd605a1 data-v-4dd605a1><section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2024-03-27
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/posts/2024/02/18/caotaibanzi.html" class="post-link" data-v-4e23451f>
+      上一篇 : 新年里的一些碎碎念
+    </a> <a href="/posts/2024/11/27/graal-nativeimage-fileappender.html" class="post-link" data-v-4e23451f>
+      下一篇 : 解决Graal Native Image使用FileAppender编译报错
+    </a></section></section> <article class="main-div"><div class="post-content content content__default"><p>当我们不论使用 Micronaut 框架还是其他框架时，如果项目中使用了 AWT 相应特性（仅特性，非 Swing 应用），比如生成图片，在我们将 Java 应用编译为 Native Image 本地应用后，可能就会报出很多和 AWT 相关的异常，导致生成图片相关功能无法使用。</p> <p>Quarkus 框架给出了官方的解决方案，直接按官方方案使用插件和制作基础镜像即可。</p> <p>本文将给出一个 Micornaut 框架的完整的指南和项目示例，说明如何配置可以正确正确编译出支持 AWT 特性的项目。</p> <h2 id="_1-基础镜像准备"><a href="#_1-基础镜像准备" class="header-anchor">#</a> 1. 基础镜像准备</h2> <p>Micronaut 框架的默认编译插件中，如 Maven Plugin，指定的 Docker 基础镜像为：<code>frolvlad/alpine-glibc:alpine-3.XX</code>。该镜像中没有图形化所依赖的包 <code>freetype</code>，理论上为该镜像安装依赖的包即可。安装命令如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>apk <span class="token function">add</span> freetype
+</code></pre></div><p>但以 Micronaut 3.10.3 对应的基础镜像版本 <code>alpine-3.19</code> 为例，安装 <code>freetype</code> 后，连带依赖 <code>brotli-libs</code> 却无法正常运行，此问题我一直无法找到解决方法，最后我决定换一个其他的镜像作为运行基础镜像。</p> <p>最终验证多种镜像后，推荐两个我觉得不错的镜像，一个是最全的镜像：<code>centos</code> ，缺点是镜像比较大，约 204M；另一个是：<code>redhat/ubi8-minimal</code>，大小约 93M，本次选用了它。</p> <p>我们基于此镜像，安装图形化相关的依赖包，制作运行基础镜像，Dockerfile 示例如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>FROM redhat/ubi8-minimal:8.9
+RUN microdnf <span class="token function">install</span> freetype fontconfig
+</code></pre></div><h2 id="_2-native-image-镜像准备"><a href="#_2-native-image-镜像准备" class="header-anchor">#</a> 2. Native Image 镜像准备</h2> <p>由于 Micronaut 插件使用 Dockerfile 多步编译制作镜像，依赖安装有 GraalVM Native Image 命令的 Docker 镜像进行编译，所以我们先准备编译用镜像：<code>ghcr.io/graalvm/native-image:ol7-java11-22.3.2</code>。</p> <blockquote><p>注意：此处的镜像版本是使用 Micronaut 3.10.3 所对应的。具体的版本会由于 Micronaut 框架版本的差异而有差异，可以使用命令 <code>mvn mn:dockerfile -Dpackagin=docker-native</code> 生成 Dockerfile，然后查看其中的镜像版本。</p></blockquote> <p>由于国内的 Docker 镜像仓库代理，都只代理的 Docker Hub，而 Graal 的镜像分发在 <code>ghcr.io</code>，如果你没有合规的 VPN 途径，是无法下载到此镜像的。</p> <p>推荐通过 GitHub 项目 <a href="https://github.com/togettoyou/hub-mirror" target="_blank" rel="noopener noreferrer">hub-mirror<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> 将镜像转换拉取到你的的阿里云个人仓库中，再拉取到本地即可。</p> <p>如果你连 GitHub 都上不去了，就先装一个 <a href="https://steampp.net/" target="_blank" rel="noopener noreferrer">Watt Toolkit<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>。</p> <p>由于我们的项目依赖 AWT 图形组件，所以编译环境也需要相应的图形组件，我们先给 <code>graalvm/native-image</code> 安装 <code>freetype</code> 库：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>FROM ghcr.io/graalvm/native-image:ol7-java11-22.3.2
+RUN yum <span class="token function">install</span> <span class="token parameter variable">-y</span> freetype-devel
+</code></pre></div><p>制作好镜像后，我们将原版镜像备份，如： <code>docker tag ghcr.io/graalvm/native-image:ol7-java11-22.3.2 native:back</code>，然后将的镜像改为原版的 tag 以替换原镜像。</p> <h2 id="_3-项目配置文件准备"><a href="#_3-项目配置文件准备" class="header-anchor">#</a> 3.项目配置文件准备</h2> <p>我们的目标是要编译得到一个本地应用，按照 GraalVM 的官方指南，我们需要<strong>将类的信息添加到配置文件中，以支持反射查找类</strong>，然后在编译时指定该文件。这样在编译后，本地应用就不会报错找不到类了。</p> <p>按照以上官方的指南思路进行配置，我们也不用手工去编写这个文件。我们只要先使用 <code>mvn package</code> 命令编译出 jar，然后我们在本地（非 Docker 中）安装 GraalVM 作为 JDK，接着使用 java 命令，带着 agent 运行 jar，在运行后执行相应的业务逻辑，代码所涉及反射的类信息，就会自动添加到指定的配置文件中。</p> <p>运行代理的代码示例如下：</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">java</span> -agentlib:native-image-agent<span class="token operator">=</span>config-output-dir<span class="token operator">=</span>./output <span class="token parameter variable">-jar</span> mortnon-micronaut-0.1.jar
+</code></pre></div><p>以上代码中我们指定输出目录为当前目录下的 <code>output</code>。</p> <p>如上运行后，我们要解决 AWT 图形化相关的编译问题，只要调用生成图片相关的 API 触发相应的逻辑，对应的 AWT 的反射信息就会自动添加到配置文件中。</p> <p>在我们停止运行后，在 <code>output</code> 目录中就可以找到生成的配置文件。</p> <blockquote><p>如果需要生成整个项目的反射信息，我们遍历所有的业务逻辑。但我更推荐按需要添加，缺少再加。</p></blockquote> <p>最终生成的文件，我们主要需要三个： <code>jni-config.json</code>、<code>reflect-config.json</code> 和 <code>resource-config.json</code>。</p> <p>AWT 由于通过 JNI 调用原生 API 进行图形操作，所以还会涉及到 JNI 的配置文件。</p> <p>虽然官方的组件自动生成了这些文件，但最终编译为 Native Image 运行时，还是可能会有部分类信息未添加到配置文件中。比如报错： <code>java.awt.AWTError: Toolkit not found: sun.awt.X11.XToolkit</code>，就是没有自动识别到的类，这里需要我们手动添加到配置文件中后重新编译。</p> <p>以我的项目为例，使用了 AWT 生成图片，最终一个可用的、包含有 AWT 的配置文件内容示例如下：</p> <ul><li><code>jni-config.json</code></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;[Lsun.java2d.loops.GraphicsPrimitive;&quot;</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.AlphaComposite&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;extraAlpha&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;rule&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.Color&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;getRGB&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.GraphicsEnvironment&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;isHeadless&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.geom.AffineTransform&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;m00&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;m01&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;m02&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;m10&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;m11&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;m12&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.geom.GeneralPath&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;byte[]&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;float[]&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.geom.Path2D&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;numTypes&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pointTypes&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;windingRule&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.geom.Path2D<span class="token variable">$Float</span>&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;floatCoords&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.geom.Point2D<span class="token variable">$Float</span>&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;x&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;y&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.geom.Rectangle2D<span class="token variable">$Float</span>&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;height&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;width&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;x&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;y&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.image.BufferedImage&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;colorModel&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;imageType&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;raster&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;getRGB&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int[]&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;setRGB&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int[]&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.image.ColorModel&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;colorSpace&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;colorSpaceType&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;isAlphaPremultiplied&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;is_sRGB&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;nBits&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;numComponents&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pData&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;supportsAlpha&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;transparency&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;getRGBdefault&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.image.IndexColorModel&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;allgrayopaque&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;colorData&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;map_size&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;rgb&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;transparent_index&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.image.Raster&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;dataBuffer&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;height&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;minX&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;minY&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;numBands&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;numDataElements&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sampleModel&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sampleModelTranslateX&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sampleModelTranslateY&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;width&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.image.SampleModel&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;height&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;width&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;getPixels&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int[]&quot;</span>,
+          <span class="token string">&quot;java.awt.image.DataBuffer&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;setPixels&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int[]&quot;</span>,
+          <span class="token string">&quot;java.awt.image.DataBuffer&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;java.awt.image.SinglePixelPackedSampleModel&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;bitMasks&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;bitOffsets&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;bitSizes&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;maxBitSize&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.awt.SunHints&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;INTVAL_STROKE_PURE&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.awt.image.BufImgSurfaceData<span class="token variable">$ICMColorData</span>&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pData&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.awt.image.IntegerComponentRaster&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;data&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;dataOffsets&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pixelStride&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;scanlineStride&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;type&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.CharToGlyphMapper&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;charToGlyph&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.Font2D&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;canDisplay&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;char&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;charToGlyph&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;charToVariationGlyph&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;getMapper&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;getTableBytes&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.FontStrike&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;getGlyphMetrics&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.FreetypeFontScaler&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;invalidateScaler&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.GlyphList&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;len&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;maxLen&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;maxPosLen&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;glyphData&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;chData&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;images&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;positions&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;x&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;y&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;gposx&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;gposy&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;usePositions&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;lcdRGBOrder&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;lcdSubPixPos&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.PhysicalStrike&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pScalerContext&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;adjustPoint&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;java.awt.geom.Point2D<span class="token variable">$Float</span>&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;getGlyphPoint&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.StrikeMetrics&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>,
+          <span class="token string">&quot;float&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.TrueTypeFont&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;readBlock&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;java.nio.ByteBuffer&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;readBytes&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;int&quot;</span>,
+          <span class="token string">&quot;int&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.font.Type1Font&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;readFile&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;java.nio.ByteBuffer&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.Disposer&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;addRecord&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;java.lang.Object&quot;</span>,
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;long&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.InvalidPipeException&quot;</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.NullSurfaceData&quot;</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.SunGraphics2D&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;clipRegion&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;composite&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;eargb&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;lcdTextContrast&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pixel&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;strokeHint&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.SurfaceData&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pData&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;valid&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.Blit&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.BlitBg&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;AnyAlpha&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Src&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SrcNoEa&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SrcOver&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;SrcOverNoEa&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Xor&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.DrawGlyphList&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.DrawGlyphListAA&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.DrawGlyphListLCD&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.DrawLine&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.DrawParallelogram&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.DrawPath&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.DrawPolygons&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.DrawRect&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.FillParallelogram&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.FillPath&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.FillRect&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.FillSpans&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.GraphicsPrimitive&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;pNativePrim&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.GraphicsPrimitiveMgr&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;register&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;sun.java2d.loops.GraphicsPrimitive[]&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.MaskBlit&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.MaskFill&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.ScaledBlit&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Any3Byte&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Any4Byte&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;AnyByte&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;AnyColor&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;AnyInt&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;AnyShort&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ByteBinary1Bit&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ByteBinary2Bit&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ByteBinary4Bit&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ByteGray&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ByteIndexed&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ByteIndexedBm&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;FourByteAbgr&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;FourByteAbgrPre&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Index12Gray&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Index8Gray&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;IntArgb&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;IntArgbBm&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;IntArgbPre&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;IntBgr&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;IntRgb&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;IntRgbx&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;OpaqueColor&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ThreeByteBgr&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Ushort4444Argb&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Ushort555Rgb&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Ushort555Rgbx&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;Ushort565Rgb&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;UshortGray&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;UshortIndexed&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.TransformHelper&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;long&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.CompositeType&quot;</span>,
+          <span class="token string">&quot;sun.java2d.loops.SurfaceType&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.loops.XORComposite&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;alphaMask&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;xorColor&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;xorPixel&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.pipe.Region&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;bands&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;endIndex&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hix&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;hiy&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;lox&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;loy&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.pipe.RegionIterator&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;curIndex&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;numXbands&quot;</span>
+      <span class="token punctuation">}</span>,
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;region&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.nio.ch.FileChannelImpl&quot;</span>,
+    <span class="token string">&quot;fields&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;fd&quot;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div><ul><li><code>relect-config.json</code></li></ul> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token punctuation">[</span>
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;fun.mortnon.framework.log.LazyInitRollingFileAppender&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.rolling.RollingFileAppender&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.FileAppender&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.rolling.TimeBasedRollingPolicy&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.rolling.RollingPolicyBase&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.rolling.helper.IntegerTokenConverter&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.rolling.helper.DateTokenConverter&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.rolling.helper.FileNamePattern&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.util.FileSize&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.classic.PatternLayout&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.pattern.PatternLayoutBase&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;ch.qos.logback.core.OutputStreamAppender&quot;</span>,
+    <span class="token string">&quot;allDeclaredFields&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allPublicConstructors&quot;</span><span class="token builtin class-name">:</span> true,
+    <span class="token string">&quot;allDeclaredMethods&quot;</span><span class="token builtin class-name">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;com.sun.mail.smtp.SMTPTransport&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+          <span class="token string">&quot;javax.mail.Session&quot;</span>,
+          <span class="token string">&quot;javax.mail.URLName&quot;</span>
+        <span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;javax.activation.DataContentHandler&quot;</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;javax.activation.MailcapCommandMap&quot;</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.awt.X11FontManager&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.awt.X11.XToolkit&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.awt.X11GraphicsEnvironment&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;sun.java2d.marlin.DMarlinRenderingEngine&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>,
+  <span class="token punctuation">{</span>
+    <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;io.netty.channel.epoll.EpollSocketChannel&quot;</span>,
+    <span class="token string">&quot;methods&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span>
+      <span class="token punctuation">{</span>
+        <span class="token string">&quot;name&quot;</span><span class="token builtin class-name">:</span> <span class="token string">&quot;&lt;init&gt;&quot;</span>,
+        <span class="token string">&quot;parameterTypes&quot;</span><span class="token builtin class-name">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">]</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">]</span>
+</code></pre></div><p>配置文件需要添加到项目的 <code>resource</code> 目录中，如图：</p> <p><img src="data:image/png;base64,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" alt=""></p> <h2 id="_4-编译项目"><a href="#_4-编译项目" class="header-anchor">#</a> 4.编译项目</h2> <p>我们还需要将以上文件配置到编译参数中，在 <code>pom.xml</code> 的 <code>properties</code> 中添加参数如下：</p> <div class="language-xml extra-class"><pre class="language-xml"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>micronaut.native-image.args</span><span class="token punctuation">&gt;</span></span>-H:ReflectionConfigurationFiles=./classes/reflect-config.json -H:ResourceConfigurationFiles=./classes/resource-config.json -H:JNIConfigurationFiles=./classes/jni-config.json<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>micronaut.native-image.args</span><span class="token punctuation">&gt;</span></span>
+</code></pre></div><p>最后使用我们制作好的运行基础镜像，执行项目编译命令，制作最终制品镜像：</p> <div class="language-bash extra-class"><pre class="language-bash"><code>mvn package <span class="token parameter variable">-Dpackaging</span><span class="token operator">=</span>docker-native -Dmicronaut.native-image.base-image-run<span class="token operator">=</span>ubi8:freetype
+</code></pre></div><h2 id="_6-小结"><a href="#_6-小结" class="header-anchor">#</a> 6. 小结</h2> <p>从以上描述中看，好像整个方法、流程并不困难，但这些问题的解决在国内外的网站上没有一个统一的解答和方案，信息都非常零碎的。甚至我直接向 Micronaut 开源组提问，官方也只是含糊的让我自己去找 GraalVM 的资料、自己处理 AWT 相关的配置文件。</p> <p>经过很长一段时间的查找资料、实践、总结，不断尝试，最终有了以上成果，才能大家分享。</p> <p>Native Image 编译使用 AWT 组件的项目遇到的问题，抽象化以后，其实是一个通用的问题：编译环境、运行环境、应用三者的一致性问题。</p> <p>我们可以总结出类似问题的解决思路：</p> <ol><li>编译失败，查看报错信息，分析编译环境需要的环境依赖，安装依赖，解决编译环境问题</li> <li>启动应用报错，找不到 *.so，分析运行环境需要的环境依赖，安装依赖，解决运行环境问题</li> <li>运行应用，执行逻辑时报错找不到类，分析缺少的反射信息，在反射文件中添加反射信息，重新编译</li></ol> <p>以上三步反复验证调整，最终达成三者的统一，制作出来的应用就能和本地应用一样运行。</p> <p>当然，还有另一种思路：如果暂时没有办法解决，换一个其他的 java 依赖框架或者换一种写法，避开这种无法解决的依赖问题，以后再解决。</p> <p>最后，分享制作好的镜像文件，可以下载后在环境上 <code>docker load -i xxx</code> 导入后使用：</p> <ol><li>安装了 freetype 的 Native Image Docker 镜像：链接：https://share.weiyun.com/gJqtyozL 密码：fe4e8n</li> <li>安装了 freetype 的 Ubi8-minimal 镜像：链接：https://share.weiyun.com/a6ahCJxD 密码：4xutik</li></ol> <p>示例项目可以参看：<a href="https://github.com/mortise-and-tenon/mortnon-micronaut" target="_blank" rel="noopener noreferrer">Mortnon GitHub<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> <a href="https://gitee.com/mortise-and-tenon/mortnon-micronaut" target="_blank" rel="noopener noreferrer">Mortnon Gitee<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>，相应的配置文件可以复制参考。</p> <p>欢迎一起学习交流。</p></div></article> <section class="post-meta main-div" data-v-4e23451f><section class="post-date clearfix" data-v-4e23451f><span class="create-date" data-v-4e23451f>
+      发布时间 : 2024-03-27
+    </span> <!----></section> <section class="post-links" data-v-4e23451f><a href="/posts/2024/02/18/caotaibanzi.html" class="post-link" data-v-4e23451f>
+      上一篇 : 新年里的一些碎碎念
+    </a> <a href="/posts/2024/11/27/graal-nativeimage-fileappender.html" class="post-link" data-v-4e23451f>
+      下一篇 : 解决Graal Native Image使用FileAppender编译报错
+    </a></section></section> <!----></div></main> <aside class="aside" data-v-4dd605a1><div class="info-card main-div" data-v-9d847660 data-v-4dd605a1><div class="info-card-header" data-v-9d847660><img src="https://images.bookhub.tech/mp/avatar.jpg" alt="阿呜" class="info-avatar" data-v-9d847660></div> <div class="info-card-body" data-v-9d847660><section class="info-nickname" data-v-9d847660>
+      阿呜
+    </section> <section class="info-desc" data-v-9d847660>‍📢云原生框架 Micronaut 推广者<br/>☁️云计算从业者<br/>🌱高级软件工程师<br/>☘️系统架构师<br/>💻个人空间：<a href="https://luansheng.fun">https://luansheng.fun</a><br/>📱公众号：程序员爱读书</br><img src="https://images.bookhub.tech/mp/mp.png" width="60%"/></section> <section class="info-contact" data-v-9d847660><section data-v-9d847660><span title="中国·成都" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>中国·成都</title><use xlink:href="#icon-location" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          中国·成都
+        </span></span></section> <section data-v-9d847660><span title="MortNon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>MortNon</title><use xlink:href="#icon-organization" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          MortNon
+        </span></span></section> <section data-v-9d847660><a href="mailto:mortnon@outlook.com" title="mortnon@outlook.com" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>mortnon@outlook.com</title><use xlink:href="#icon-email" data-v-9d847660 data-v-9d847660></use></svg><span class="info-text" data-v-9d847660 data-v-9d847660>
+          mortnon@outlook.com
+        </span></a></section></section></div> <div class="info-card-footer" data-v-9d847660><section class="info-sns clearfix" data-v-9d847660><a href="https://github.com/dev2007" target="_blank" class="sns-link" data-v-9d847660><span title="GitHub: dev2007" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>GitHub: dev2007</title><use xlink:href="#icon-github" data-v-9d847660 data-v-9d847660></use></svg></span></a><a href="https://juejin.cn/user/2620868693599405" target="_blank" class="sns-link" data-v-9d847660><span title="掘金: dev2007" class="sns-icon" data-v-9d847660 data-v-9d847660><svg class="icon" style="font-size:1.5em;" data-v-9d847660 data-v-9d847660><title data-v-9d847660 data-v-9d847660>掘金: dev2007</title><use xlink:href="#icon-juejin" data-v-9d847660 data-v-9d847660></use></svg></span></a></section></div></div> <div class="post-nav-card main-div" style="position:relative;top:0;width:0px;" data-v-4dd605a1><div class="post-nav-contents"><svg class="icon"><title>book</title><use xlink:href="#icon-book"></use></svg> <span>文章目录</span> <div class="post-nav-toc"><ul><li><a href="/posts/2024/03/27/micronaut-awt.html#_1-基础镜像准备">1. 基础镜像准备</a></li><li><a href="/posts/2024/03/27/micronaut-awt.html#_2-native-image-镜像准备">2. Native Image 镜像准备</a></li><li><a href="/posts/2024/03/27/micronaut-awt.html#_3-项目配置文件准备">3.项目配置文件准备</a></li><li><a href="/posts/2024/03/27/micronaut-awt.html#_4-编译项目">4.编译项目</a></li><li><a href="/posts/2024/03/27/micronaut-awt.html#_6-小结">6. 小结</a></li></ul></div></div> <!----></div></aside></div> <footer class="footer" data-v-1375e54c><p class="footer-sns-links" data-v-1375e54c><a href="https://github.com/dev2007" target="_blank" class="sns-link" data-v-1375e54c><span title="GitHub: dev2007" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>GitHub: dev2007</title><use xlink:href="#icon-github" data-v-1375e54c data-v-1375e54c></use></svg></span></a><a href="https://juejin.cn/user/2620868693599405" target="_blank" class="sns-link" data-v-1375e54c><span title="掘金: dev2007" class="sns-icon" data-v-1375e54c data-v-1375e54c><svg class="icon" style="font-size:25px;" data-v-1375e54c data-v-1375e54c><title data-v-1375e54c data-v-1375e54c>掘金: dev2007</title><use xlink:href="#icon-juejin" data-v-1375e54c data-v-1375e54c></use></svg></span></a></p> <!----> <p class="footer-text" data-v-1375e54c><div style="display:flex;flex-direction:column"><span>&copy; 2022~2024 阿呜</span>
+        <div style="display:flex;flex-direction:row;justify-content:center">
+        <a href="https://beian.miit.gov.cn" target="_blank" style="color: rgb(102, 102, 102);" onmouseover="this.style.color='rgb(30, 144, 255)'" onmouseout="this.style.color='rgb(102,102,102)'">蜀ICP备2024097210号</a>
+        <div style="display:flex;align-items:center;margin-left:8px">
+        <img src="logo01.png" style="width:16px;height:16px">
+        <a href="https://beian.mps.gov.cn/#/query/webSearch?code=51018002000252" target="_blank" style="color: rgb(102, 102, 102);" onmouseover="this.style.color='rgb(30, 144, 255)'" onmouseout="this.style.color='rgb(102,102,102)'">川公网安备51018002000252号</a>
+        </div>
+        </div></div></p></footer></div><div class="global-ui"><!----><!----></div></div>
+    <script src="/assets/js/app.467e2829.js" defer></script><script src="/assets/js/7.4e539d82.js" defer></script><script src="/assets/js/27.7a62c283.js" defer></script>
+  </body>
+</html>
